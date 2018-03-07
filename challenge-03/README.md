@@ -16,16 +16,14 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-
-var pessoa = { nome: 'nome', sobrenome: 'Sobenome', sexo: 'sexo', idade: 25, 
-               altura: 1.20, peso: 60, andando: false, caminhouQuantosMetros: 0 };
+var pessoa = { nome: 'Ninja', sobrenome: 'Java', sexo: 'Masculino', idade: 30, 
+               altura: 1.80, peso: 80, andando: false, caminhouQuantosMetros: 0 };
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-
 pessoa.fazerAniversario = function(){ 
    pessoa.idade++; 
 }
@@ -41,7 +39,6 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-
 pessoa.andar = function() {
   caminhouQuantosMetros + 5,
   andando = true;
@@ -92,66 +89,68 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-
+pessoa.nomeCompleto(); // "Ola meu nome é Ninja Java!"
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostraridade();  // "Olá eu tenho 30 anos !"
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarPeso(); // "Eu peso 80kg"
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarAltura()  //"Minha Altura é 1,80m."
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-?
+pessoa.fazerAniversario(); pessoa.fazerAniversario(); pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-?
+33 anos
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+pessoa.andar(100);
+pessoa.andar(200);
+pessoa.andar(50);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andando;   // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.andando;  // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.caminhouQuantosMetros;  // 350
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -170,8 +169,27 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
-
+pessoa.apresentacao = function() {
+  var sexo = 'o';
+  var idadeAnos = 'anos';
+  var metrosCaminhados = 'metros';
+  
+  if( pessoa.sexo === 'Feminino' ) {
+     sexo = 'a';
+  } 
+  if( pessoa.idade === 1 ) {
+     idadeAnos = 'ano';
+  }   
+  if( pessoa.caminhouQuantosMetros === 1 ) {
+      metrosCaminhados = 'metro';
+  }
+  
+  return "Olá, eu sou " + sexo + " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + " " 
+  + idadeAnos + ", " + pessoa.altura +"m, meu peso é " + pessoa.peso +"kg e, só hoje, eu já caminhei " +
+  pessoa.caminhouQuantosMetros + " " + metrosCaminhados + "!"; 
+  
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao(); 
+// "Olá, eu sou o Ninja Java, tenho 33 anos, 1,80m, meu peso é 80kg e, só hoje, eu já caminhei 350 metros!"
+
 ```
