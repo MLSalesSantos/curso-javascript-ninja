@@ -106,16 +106,17 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function( numeroPessoas) {
    var totalPessoas = carro.quantidadePessoas + numeroPessoas; 
-   if( carro.quantidadePessoa === carro.assentos && totalPessoas >= carro.assentos ) {
+   var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;       
+   var pluralOuSingular = quantasPessoasCabem ===1 ? 'pessoa' : 'pessoas'  
+   
+   if( carro.quantidadePessoa === carro.assentos && totalPessoas >= carro.assentos ) {
       retun "O carro já está lotado!";
    }
    
    if( totalPessoas > carros.assentos ){                  
-      var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas; 
-      var pluralOuSingular = quantasPessoasCabem ===1 ? 'pessoa' : 'pessoas'
-      retun "Só cabem mais " + quantasPessoasCabem + pluralOuSingular + " !";        
-     
+       retun "Só cabem mais " + quantasPessoasCabem + pluralOuSingular + " !";         
    }
+   
    carro.quantidadePessoa += numeroPEssoas;
    return  "Já temos " + carro.quantidadePessoas + " " + pluralOuSingular + " no carro!"
 };
